@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Wild Safari Adventures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .nav {
+            background-color: #2d6a4f;
+            padding: 15px 0;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #ffd166;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd166;
+        }
+        
+        .user-controls {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-name {
+            margin-right: 15px;
+        }
+        
+        .logout-btn {
+            background-color: #1b4332;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .logout-btn:hover {
+            background-color: #0d2818;
+        }
+        
+        .hero {
+            height: 80vh;
+            background-image: url('https://c.wallhere.com/photos/00/ec/Africa-48037.jpg!d');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2d6a4f;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1b4332;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2d6a4f;
+        }
+        
+        .featured-safaris {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .safari-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .safari-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .safari-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .safari-content {
+            padding: 20px;
+        }
+        
+        .safari-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2d6a4f;
+        }
+        
+        .safari-desc {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .safari-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .safari-info span {
+            font-weight: bold;
+            color: #2d6a4f;
+        }
+        
+        .testimonials {
+            background-color: #f0f0f0;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #2d6a4f;
+        }
+        
+        .cta {
+            background-color: #2d6a4f;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            margin-bottom: 30px;
+        }
+        
+        .cta .btn {
+            background-color: #ffd166;
+            color: #333;
+        }
+        
+        .cta .btn:hover {
+            background-color: #e9bc5c;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #ffd166;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #ffd166;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            text-align: center;
+            color: #aaa;
+            border-top: 1px solid #555;
+            padding-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container container">
+            <a href="home.html" class="logo">Wild<span>Safari</span></a>
+            <ul class="nav-links">
+                <li><a href="index1.html">Register</a></li>
+                <li><a href="login1.html">Login</a></li>
+                <li><a href="home1.html">Home</a></li>
+                <li><a href="about1.html">About</a></li>
+                <li><a href="guides1.html">Guides & Animals</a></li>
+            </ul>
+            <div class="user-controls" id="userControls">
+                <!-- User info will be inserted here via JavaScript -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Experience the Wild Adventure</h1>
+            <p>Explore the beauty of nature and witness majestic wildlife in their natural habitat. Book your unforgettable safari adventure today.</p>
+            <a href="guides1.html" class="btn">Discover Safaris</a>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Safari Experiences</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Discover our most popular safari adventures, carefully curated to provide you with the ultimate wildlife experience. Each safari offers unique opportunities to observe animals in their natural habitats.</p>
+            
+            <div class="featured-safaris">
+                <div class="safari-card">
+                    <div class="safari-img" style="background-image: url('https://media.gettyimages.com/id/494856046/photo/lion-in-high-grass.jpg?s=2048x2048&w=gi&k=20&c=2JVnK9QJTtSRIFoFEPVnc3lDHez1GYgm2nopORiopys=');"></div>
+                    <div class="safari-content">
+                        <h3 class="safari-title">Big Five Adventure</h3>
+                        <p class="safari-desc">Experience the thrill of seeing lions, elephants, buffalos, leopards, and rhinos in their natural habitat.</p>
+                        <div class="safari-info">
+                            <p>Duration: <span>5 days</span></p>
+                            <p>Price: <span>$2,499</span></p>
+                        </div>
+                        <a href="guides1.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="safari-card">
+                    <div class="safari-img" style="background-image: url('https://www.shutterstock.com/shutterstock/photos/1202068888/display_1500/stock-photo-group-of-giraffes-in-the-savanna-kenya-tanzania-east-africa-1202068888.jpg');"></div>
+                    <div class="safari-content">
+                        <h3 class="safari-title">Savannah Explorer</h3>
+                        <p class="safari-desc">Journey through vast savannahs and witness diverse wildlife including giraffes, zebras, and numerous bird species.</p>
+                        <div class="safari-info">
+                            <p>Duration: <span>7 days</span></p>
+                            <p>Price: <span>$3,299</span></p>
+                        </div>
+                        <a href="guides1.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="safari-card">
+                    <div class="safari-img" style="background-image: url('https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    <div class="safari-content">
+                        <h3 class="safari-title">Elephant Sanctuary</h3>
+                        <p class="safari-desc">Get up close with majestic elephants and learn about conservation efforts to protect these gentle giants.</p>
+                        <div class="safari-info">
+                            <p>Duration: <span>4 days</span></p>
+                            <p>Price: <span>$1,999</span></p>
+                        </div>
+                        <a href="guides1.html" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Adventurers Say</h2>
+            
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"The safari experience exceeded all my expectations. Our guide was knowledgeable and passionate, and we were fortunate to see all of the Big Five. A truly unforgettable adventure!"</p>
+                    <p class="testimonial-author">- Sarah Johnson</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"From the moment we arrived, everything was perfectly organized. The accommodations were comfortable yet authentic, and the wildlife sightings were breathtaking. Highly recommended!"</p>
+                    <p class="testimonial-author">- Michael Chen</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"This was our third safari with Wild Safari Adventures, and they never disappoint. The team's commitment to conservation and sustainable tourism makes the experience even more meaningful."</p>
+                    <p class="testimonial-author">- Emma and David Thompson</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"As a wildlife photographer, I was amazed by the opportunities to capture incredible moments. Our guide knew exactly where to position us for the best shots. Will definitely return!"</p>
+                    <p class="testimonial-author">- Robert Stevens</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta">
+        <div class="container">
+            <h2>Ready for Your Wild Adventure?</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px;">Book your safari experience today and create memories that will last a lifetime. Our expert guides are waiting to show you the wonders of the wild.</p>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="about1.html">Our Story</a></li>
+                        <li><a href="about1.html">Meet the Team</a></li>
+                        <li><a href="about1.html">Conservation Efforts</a></li>
+                        <li><a href="about1.html">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Safari Experiences</h3>
+                    <ul>
+                        <li><a href="guides1.html">Big Five Adventure</a></li>
+                        <li><a href="guides1.html">Savannah Explorer</a></li>
+                        <li><a href="guides1.html">Elephant Sanctuary</a></li>
+                        <li><a href="guides1.html">Custom Safaris</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Travel Tips</a></li>
+                        <li><a href="#">Booking Policy</a></li>
+                        <li><a href="#">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Phone: +123-456-7890</li>
+                        <li>Email: info@wildsafari.com</li>
+                        <li>Address: 123 Safari Road, Wilderness Park</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Wild Safari Adventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            const isLoggedIn = localStorage.getItem('safariLoggedIn') === 'true';
+            const userControls = document.getElementById('userControls');
+            
+            if (isLoggedIn) {
+                // Get current user
+                const currentUser = JSON.parse(localStorage.getItem('safariCurrentUser'));
+                
+                // Create user controls
+                userControls.innerHTML = `
+                    <span class="user-name">Welcome, ${currentUser.fullName}</span>
+                    <button class="logout-btn" id="logoutBtn">Log Out</button>
+                `;
+                
+                // Add logout functionality
+                document.getElementById('logoutBtn').addEventListener('click', function() {
+                    localStorage.removeItem('safariLoggedIn');
+                    localStorage.removeItem('safariCurrentUser');
+                    window.location.href = 'login1.html';
+                });
+            } 
+            
+            // Smooth scrolling for Safari links
+            const safariLinks = document.querySelectorAll('.safari-card .btn');
+            safariLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

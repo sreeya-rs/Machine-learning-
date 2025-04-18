@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Wild Safari Adventures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .nav {
+            background-color: #2d6a4f;
+            padding: 15px 0;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #ffd166;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd166;
+        }
+        
+        .user-controls {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-name {
+            margin-right: 15px;
+        }
+        
+        .logout-btn {
+            background-color: #1b4332;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .logout-btn:hover {
+            background-color: #0d2818;
+        }
+        
+        .page-header {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2d6a4f;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h3 {
+            color: #2d6a4f;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            background-color: #f0f0f0;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2d6a4f;
+            margin-bottom: 10px;
+        }
+        
+        .stat-title {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .team-photo {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        .team-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2d6a4f;
+        }
+        
+        .team-role {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .team-bio {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .cta {
+            background-color: #2d6a4f;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffd166;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e9bc5c;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #ffd166;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #ffd166;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            text-align: center;
+            color: #aaa;
+            border-top: 1px solid #555;
+            padding-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .page-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container container">
+            <a href="home.html" class="logo">Wild<span>Safari</span></a>
+            <ul class="nav-links">
+                <li><a href="index1.html">Register</a></li>
+                <li><a href="login1.html">Login</a></li>
+                <li><a href="home1.html">Home</a></li>
+                <li><a href="about1.html">About</a></li>
+                <li><a href="guides1.html">Guides & Animals</a></li>
+            </ul>
+            <div class="user-controls" id="userControls">
+                <!-- User info will be inserted here via JavaScript -->
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">About Wild Safari Adventures</h1>
+            <p>Discover our story, mission, and the passionate team behind your unforgettable safari experiences</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://c.wallhere.com/photos/00/ec/Africa-48037.jpg!d" alt="Safari landscape">
+                </div>
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2010, Wild Safari Adventures began with a simple mission: to share the incredible beauty of wildlife and nature with visitors from around the world while promoting conservation and sustainable tourism.</p>
+                    <p>What started as a small family operation with just two safari vehicles has grown into one of the most respected safari companies in the region, offering a wide range of experiences while maintaining our commitment to small groups and personalized service.</p>
+                    <p>Our founder, James Wilson, a former wildlife biologist, established the company after spending over a decade studying and documenting the behavior of wildlife in their natural habitats. His deep connection to the land and its inhabitants remains at the core of our company values.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section stats">
+        <div class="container">
+            <h2 class="section-title">Wild Safari By The Numbers</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-title">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25,000+</div>
+                    <div class="stat-title">Happy Adventurers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-title">Conservation Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30</div>
+                    <div class="stat-title">Expert Guides</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Values & Mission</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Conservation First</h3>
+                    <p>We believe that responsible tourism can play a vital role in wildlife conservation. A portion of all safari bookings goes directly to local conservation efforts and community development projects.</p>
+                    <p>Our team works closely with wildlife protection agencies and local communities to ensure that our activities have minimal impact on the environment while maximizing benefits for both wildlife and people.</p>
+                    <h3>Education & Awareness</h3>
+                    <p>We're committed to creating meaningful connections between our guests and the natural world. Our guides are passionate educators who share their deep knowledge and respect for wildlife, helping to foster a greater understanding of conservation challenges and solutions.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://wallpapercave.com/wp/wp1918982.jpg" alt="Wildlife conservation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Our team of experienced guides and conservation experts are the heart of Wild Safari Adventures, bringing passion, knowledge, and professionalism to every safari experience.</p>
+            
+            <div class="team-container">
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('https://th.bing.com/th/id/OIP.exmZdVvCt6QSpYXS88l7_AHaHa?rs=1&pid=ImgDetMain');"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">James Wilson</h3>
+                        <p class="team-role">Founder & Lead Conservationist</p>
+                        <p class="team-bio">With over 20 years of experience in wildlife biology and conservation, James brings unparalleled knowledge and passion to every aspect of our operations.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                <div class="team-photo" style="background-image: url('https://cdn1.matadornetwork.com/blogs/1/2021/10/Dunia-Female-guide-Zawadi.jpg');"></div>
+<div class="team-info">
+  <h3 class="team-name">Sarah Johnson</h3>
+  <p class="team-role">Head Safari Guide</p>
+  <p class="team-bio">A certified naturalist with 15 years of experience in the field, Sarah's knowledge of animal behavior and tracking skills are unmatched.</p>
+</div>
+</div>
+<div class="team-member">
+<div class="team-photo" style="background-image: url('https://th.bing.com/th/id/OIP.zIY6exY68AYh7yP1xQqTaAHaE8?rs=1&pid=ImgDetMain');"></div>
+<div class="team-info">
+  <h3 class="team-name">Daniel Mwangi</h3>
+  <p class="team-role">Conservation Director</p>
+  <p class="team-bio">Born and raised locally, Daniel leads our conservation initiatives and community outreach programs with deep local knowledge.</p>
+</div>
+</div>
+<div class="team-member">
+<div class="team-photo" style="background-image: url('https://www.greatadventuresafaris.com/wp-content/uploads/Female-guide-for-your-African-safari-1200x675.jpg');"></div>
+<div class="team-info">
+  <h3 class="team-name">Emily Chen</h3>
+  <p class="team-role">Wildlife Photographer</p>
+  <p class="team-bio">An award-winning photographer, Emily helps guests capture incredible moments and leads our specialized photography safaris.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section cta">
+<div class="container">
+<h2>Ready for an Unforgettable Safari Adventure?</h2>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-container">
+<div class="footer-column">
+  <h3>Wild Safari Adventures</h3>
+  <ul>
+    <li><a href="about1.html">Our Story</a></li>
+    <li><a href="about1.html">Conservation Efforts</a></li>
+    <li><a href="about1.html">Meet the Team</a></li>
+    <li><a href="careers.html">Careers</a></li>
+  </ul>
+</div>
+<div class="footer-column">
+  <h3>Safari Experiences</h3>
+  <ul>
+    <li><a href="guides1.html">Wildlife Guides</a></li>
+    <li><a href="home1.html">Day Trips</a></li>
+    <li><a href="home1.html">Multi-day Expeditions</a></li>
+    <li><a href="home1.html">Custom Safaris</a></li>
+  </ul>
+</div>
+<div class="footer-column">
+  <h3>Helpful Links</h3>
+  <ul>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="terms.html">Terms & Conditions</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+  </ul>
+</div>
+<div class="footer-column">
+  <h3>Connect With Us</h3>
+  <ul>
+    <li><a href="#">Facebook</a></li>
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">Twitter</a></li>
+    <li><a href="#">YouTube</a></li>
+  </ul>
+</div>
+</div>
+<div class="copyright">
+<p>&copy; 2025 Wild Safari Adventures. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const userControls = document.getElementById('userControls');
+  
+  // Check if user is logged in
+  const isLoggedIn = localStorage.getItem('safariLoggedIn') === 'true';
+  
+  if (isLoggedIn) {
+    // Get current user info
+    const currentUser = JSON.parse(localStorage.getItem('safariCurrentUser'));
+    
+    if (currentUser) {
+      // Display user name and logout button
+      userControls.innerHTML = `
+        <div class="user-name">Welcome, ${currentUser.firstName || 'User'}</div>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+      `;
+      
+      // Add logout functionality
+      document.getElementById('logoutBtn').addEventListener('click', function() {
+        localStorage.removeItem('safariLoggedIn');
+        localStorage.removeItem('safariCurrentUser');
+        window.location.href = 'login1.html';
+      });
+    }
+  }
+});
+</script>
+</body>
+</html>
+                                 

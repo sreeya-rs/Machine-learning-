@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration - Wild Safari Adventures</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-image: url('https://media.gettyimages.com/id/167768212/photo/cheetah-family.jpg?s=612x612&w=gi&k=20&c=--9ywt_pSeTWyUn0TkSzjcVET1de-Oie3vt4Qz4WVUc=');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2d6a4f;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2d6a4f;
+}
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: #2d6a4f;
+}
+button {
+    background-color: #2d6a4f;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+button:hover {
+    background-color: #1b4332;
+}
+.error {
+    color: #d62828;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.success {
+    color: #2d6a4f;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.nav {
+    background-color: #2d6a4f;
+    padding: 15px 0;
+    color: white;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+.logo span {
+    color: #ffd166;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #ffd166;
+}
+footer {
+    background-color: #2d6a4f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.login-link a {
+    color: #2d6a4f;
+    text-decoration: none;
+    font-weight: bold;
+}
+.login-link a:hover {
+    text-decoration: underline;
+}
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin: 10px 0;
+}
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+.radio-group input {
+    width: auto;
+    margin-right: 5px;
+}
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.checkbox-group label {
+    font-weight: normal;
+}
+.required {
+    color: #d62828;
+    margin-left: 3px;
+}
+</style>
+</head>
+
+<body>
+<nav class="nav">
+    <div class="nav-container container">
+        <a href="index.html" class="logo">Wild<span>Safari</span></a>
+        <ul class="nav-links">
+            <li><a href="index1.html">Register</a></li>
+            <li><a href="login1.html">Login</a></li>
+            <li><a href="home1.html">Home</a></li>
+            <li><a href="about1.html">About</a></li>
+            <li><a href="guides1.html">Guides & Animals</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="form-container">
+        <h1>Create Your Safari Account</h1>
+        <form id="registrationForm" action="register1.php" method="POST">
+            <div class="form-group">
+                <label for="fullName">Full Name<span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                <div id="nameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address<span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number<span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your 10-digit phone number" maxlength="10" required>
+                <div id="phoneError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label>Gender<span class="required">*</span></label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" value="Male" required> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Female"> Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Other"> Other
+                    </label>
+                </div>
+                <div id="genderError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password<span class="required">*</span></label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+                <div id="passwordError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password<span class="required">*</span></label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                <div id="confirmError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="country">Country<span class="required">*</span></label>
+                <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="IN">India</option>
+                    <option value="KE">Kenya</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="TZ">Tanzania</option>
+                    <option value="other">Other</option>
+                </select>
+                <div id="countryError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Subscribe to our newsletter for updates and special offers</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms and Conditions</a><span class="required">*</span></label>
+                </div>
+                <div id="termsError" class="error"></div>
+            </div>
+            <button type="submit" id="submitBtn">Register Now</button>
+            <div id="formSuccess" class="success"></div>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="login1.html">Login here</a>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Wild Safari Adventures. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('registrationForm');
+    const nameField = document.getElementById('fullName');
+    const emailField = document.getElementById('email');
+    const phoneField = document.getElementById('phone');
+    const passwordField = document.getElementById('password');
+    const confirmField = document.getElementById('confirmPassword');
+    const termsCheckbox = document.getElementById('terms');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const passwordError = document.getElementById('passwordError');
+    const confirmError = document.getElementById('confirmError');
+    const termsError = document.getElementById('termsError');
+    const formSuccess = document.getElementById('formSuccess');
+    
+    // Regular expressions for validation
+    const nameRegex = /^[a-zA-Z\s]{3,50}$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phoneRegex = /^[0-9]{10}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    
+    // Validation functions
+    function validateName() {
+        if (!nameRegex.test(nameField.value)) {
+            nameError.textContent = 'Name should contain only letters and spaces (3-50 characters)';
+            return false;
+        } else {
+            nameError.textContent = '';
+            return true;
+        }
+    }
+    
+    function validateEmail() {
+        if (!emailRegex.test(emailField.value)) {
+            emailError.textContent = 'Please enter a valid email address';
+            return false;
+        } else {
+            emailError.textContent = '';
+            return true;
+        }
+    }
+    
+    function validatePhone() {
+        if (!phoneRegex.test(phoneField.value)) {
+            phoneError.textContent = 'Please enter a valid 10-digit phone number';
+            return false;
+        } else {
+            phoneError.textContent = '';
+            return true;
+        }
+    }
+    
+    function validatePassword() {
+        if (!passwordRegex.test(passwordField.value)) {
+            passwordError.textContent = 'Password must contain at least 8 characters, including uppercase, lowercase, number, and special character';
+            return false;
+        } else {
+            passwordError.textContent = '';
+            return true;
+        }
+    }
+    
+    function validateConfirmPassword() {
+        if (passwordField.value !== confirmField.value) {
+            confirmError.textContent = 'Passwords do not match';
+            return false;
+        } else {
+            confirmError.textContent = '';
+            return true;
+        }
+    }
+    
+    function validateTerms() {
+        if (!termsCheckbox.checked) {
+            termsError.textContent = 'You must accept the terms and conditions';
+            return false;
+        } else {
+            termsError.textContent = '';
+            return true;
+        }
+    }
+    
+    // Add event listeners for real-time validation
+    nameField.addEventListener('blur', validateName);
+    emailField.addEventListener('blur', validateEmail);
+    phoneField.addEventListener('blur', validatePhone);
+    passwordField.addEventListener('blur', validatePassword);
+    confirmField.addEventListener('blur', validateConfirmPassword);
+    termsCheckbox.addEventListener('change', validateTerms);
+    
+    // Form submission client-side validation
+    form.addEventListener('submit', function(e) {
+        // Validate all fields on submit
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+        const isPhoneValid = validatePhone();
+        const isPasswordValid = validatePassword();
+        const isConfirmValid = validateConfirmPassword();
+        const areTermsAccepted = validateTerms();
+        
+        // Check if any radio button in the gender group is selected
+        const genderButtons = document.getElementsByName('gender');
+        let isGenderSelected = false;
+        for (let i = 0; i < genderButtons.length; i++) {
+            if (genderButtons[i].checked) {
+                isGenderSelected = true;
+                break;
+            }
+        }
+        
+        if (!isGenderSelected) {
+            document.getElementById('genderError').textContent = 'Please select your gender';
+        } else {
+            document.getElementById('genderError').textContent = '';
+        }
+        
+        // If any validation fails, prevent form submission
+        if (!isNameValid || !isEmailValid || !isPhoneValid || !isPasswordValid || !isConfirmValid || !areTermsAccepted || !isGenderSelected) {
+            e.preventDefault();
+        }
+    });
+});
+</script>
+</body>
+</html>

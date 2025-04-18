@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guides & Animals - Wild Safari Adventures</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+background-image: url('https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-color: #f0f0f0;
+color: #333;
+line-height: 1.6;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+.guides-container {
+background-color: rgba(255, 255, 255, 0.9);
+border-radius: 10px;
+padding: 30px;
+margin: 80px auto;
+max-width: 900px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+h1 {
+text-align: center;
+margin-bottom: 30px;
+color: #2d6a4f;
+}
+h2 {
+color: #2d6a4f;
+margin-bottom: 15px;
+border-bottom: 2px solid #ffd166;
+padding-bottom: 5px;
+}
+.guide-section {
+margin-bottom: 40px;
+}
+.guide-cards {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 20px;
+margin-top: 20px;
+}
+.guide-card {
+background-color: #ffffff;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+}
+.guide-card:hover {
+transform: translateY(-5px);
+}
+.guide-img {
+height: 180px;
+width: 100%;
+object-fit: cover;
+}
+.guide-info {
+padding: 15px;
+}
+.guide-info h3 {
+margin-bottom: 10px;
+color: #2d6a4f;
+}
+.guide-info p {
+font-size: 14px;
+margin-bottom: 15px;
+}
+.view-button {
+display: inline-block;
+background-color: #2d6a4f;
+color: white;
+padding: 8px 15px;
+border-radius: 5px;
+text-decoration: none;
+font-size: 14px;
+transition: background-color 0.3s;
+}
+.view-button:hover {
+background-color: #1b4332;
+}
+.animal-list {
+list-style: none;
+margin-top: 20px;
+}
+.animal-item {
+display: flex;
+align-items: center;
+background-color: #ffffff;
+margin-bottom: 15px;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.animal-img {
+width: 120px;
+height: 120px;
+object-fit: cover;
+}
+.animal-info {
+padding: 15px;
+flex: 1;
+}
+.animal-info h3 {
+color: #2d6a4f;
+margin-bottom: 5px;
+}
+.animal-info p {
+font-size: 14px;
+}
+.nav {
+background-color: #2d6a4f;
+padding: 15px 0;
+color: white;
+}
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 20px;
+}
+.logo {
+font-size: 24px;
+font-weight: bold;
+color: white;
+text-decoration: none;
+}
+.logo span {
+color: #ffd166;
+}
+.nav-links {
+display: flex;
+list-style: none;
+}
+.nav-links li {
+margin-left: 20px;
+}
+.nav-links a {
+color: white;
+text-decoration: none;
+transition: color 0.3s;
+}
+.nav-links a:hover {
+color: #ffd166;
+}
+footer {
+background-color: #2d6a4f;
+color: white;
+text-align: center;
+padding: 20px 0;
+margin-top: 40px;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+.search-bar {
+margin-bottom: 30px;
+}
+.search-bar input {
+width: 100%;
+padding: 12px;
+border: 1px solid #ddd;
+border-radius: 5px;
+font-size: 16px;
+}
+.search-bar input:focus {
+outline: none;
+border-color: #2d6a4f;
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-container container">
+<a href="index.html" class="logo">Wild<span>Safari</span></a>
+<ul class="nav-links">
+<li><a href="index1.html">Register</a></li>
+<li><a href="login1.html">Login</a></li>
+<li><a href="home1.html">Home</a></li>
+<li><a href="about1.html">About</a></li>
+<li><a href="guides1.html">Guides & Animals</a></li>
+</ul>
+</div>
+</nav>
+<div class="container">
+<div class="guides-container">
+<h1>Safari Guides & Wildlife</h1>
+<div class="search-bar">
+<input type="text" id="searchInput" placeholder="Search guides or animals...">
+</div>
+<div class="guide-section">
+<h2>Our Expert Guides</h2>
+<p>Meet our professional safari guides who will lead your adventure and share their extensive knowledge of wildlife and ecosystems.</p>
+<div class="guide-cards">
+<div class="guide-card">
+<img src="https://th.bing.com/th/id/OIP.zIY6exY68AYh7yP1xQqTaAHaE8?rs=1&pid=ImgDetMain" alt="Safari Guide" class="guide-img">
+<div class="guide-info">
+<h3>Daniel Mwangi</h3>
+<p>With 15 years of experience, Daniel specializes in bird watching and large predator tracking.</p>
+
+</div>
+</div>
+<div class="guide-card">
+<img src="https://hips.hearstapps.com/hmg-prod/images/img-9924-1580252883.jpg?crop=1.00xw:0.334xh;0,0.188xh&resize=1200:*" alt="Safari Guide" class="guide-img">
+<div class="guide-info">
+<h3>Amara Okafor</h3>
+<p>Amara's knowledge of plant medicine and animal behavior makes her safaris truly educational.</p>
+
+</div>
+</div>
+<div class="guide-card">
+<img src="https://thumbs.dreamstime.com/b/happy-taxi-driver-black-man-driving-enjoying-career-safari-tour-guide-vehicle-adventure-travel-smile-african-american-258325118.jpg" alt="Safari Guide" class="guide-img">
+<div class="guide-info">
+<h3>James Kariuki</h3>
+<p>A conservation photographer who combines safaris with photography workshops.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="guide-section">
+<h2>Spectacular Wildlife</h2>
+<p>Learn about the amazing animals you might encounter during your Wild Safari Adventure.</p>
+<ul class="animal-list">
+<li class="animal-item">
+<img src="https://media.gettyimages.com/id/549101021/photo/king-of-the-jungle.jpg?s=612x612&w=gi&k=20&c=ecewkQqD5g9WstHqdOVEoX6yB5ihTBp3QYoGNfoSbME=" alt="Lion" class="animal-img">
+<div class="animal-info">
+<h3>African Lion</h3>
+<p>The king of the savanna, these majestic predators live in prides and are best spotted during early morning or late afternoon hunts.</p>
+</div>
+</li>
+<li class="animal-item">
+<img src="https://images.pexels.com/photos/750536/pexels-photo-750536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Elephant" class="animal-img">
+<div class="animal-info">
+<h3>African Elephant</h3>
+<p>The world's largest land mammal, known for their intelligence and complex social structures. Best viewed near water sources.</p>
+</div>
+</li>
+<li class="animal-item">
+<img src="https://media.gettyimages.com/id/200134412-001/photo/kenya-reticulated-giraffes-in-buffalo-springs-national-reserve.webp?s=1024x1024&w=gi&k=20&c=0qFuyUvikZ0e6sM54PR6iLDTVQxybssPQIQtxrnnJos=" alt="Giraffe" class="animal-img">
+<div class="animal-info">
+<h3>Giraffe</h3>
+<p>These gentle giants can be seen gracefully moving across the savanna, using their long necks to feed on acacia trees.</p>
+</div>
+</li>
+<li class="animal-item">
+<img src="https://media.gettyimages.com/id/167768212/photo/cheetah-family.jpg?s=612x612&w=gi&k=20&c=--9ywt_pSeTWyUn0TkSzjcVET1de-Oie3vt4Qz4WVUc=" alt="Cheetah" class="animal-img">
+<div class="animal-info">
+<h3>Cheetah</h3>
+<p>The fastest land animal, capable of reaching speeds up to 70 mph in short bursts when hunting on open plains.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="guide-section">
+<h2>Safari Experiences</h2>
+<p>Choose from our range of carefully crafted safari experiences to match your interests and preferences.</p>
+<div class="guide-cards">
+<div class="guide-card">
+<img src="https://th.bing.com/th/id/OIP.1u8z-RGyqYwo4Vs45uMdgAHaFB?rs=1&pid=ImgDetMain" alt="Safari Experience" class="guide-img">
+<div class="guide-info">
+<h3>Classic Game Drive</h3>
+<p>Our traditional 4x4 safari experience covering the most wildlife-rich areas of the reserve.</p>
+
+</div>
+</div>
+<div class="guide-card">
+<img src="https://www.travelandleisure.com/thmb/eBVzZgkKBxh2CaiwtZD5aDAH980=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/african-icons-in-south-luangwa-national-park-zambia-WALKSAFARI1021-6796f5cb151c4e97895bd79640886257.jpg" alt="Walking Safari" class="guide-img">
+<div class="guide-info">
+<h3>Walking Safari</h3>
+<p>A guided walking experience that brings you closer to nature and smaller wildlife often missed from vehicles.</p>
+
+</div>
+</div>
+<div class="guide-card">
+<img src="https://www.balisafarimarinepark.com/wp-content/uploads/2017/11/opt3.jpg" alt="Night Safari" class="guide-img">
+<div class="guide-info">
+<h3>Night Safari</h3>
+<p>Discover nocturnal creatures and experience the magic of the African savanna after dark.</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<p>&copy; 2025 Wild Safari Adventures. All rights reserved.</p>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const searchInput = document.getElementById('searchInput');
+const guideCards = document.querySelectorAll('.guide-card');
+const animalItems = document.querySelectorAll('.animal-item');
+
+searchInput.addEventListener('keyup', function() {
+const searchTerm = searchInput.value.toLowerCase();
+
+// Search through guides
+guideCards.forEach(card => {
+const guideName = card.querySelector('h3').textContent.toLowerCase();
+const guideDescription = card.querySelector('p').textContent.toLowerCase();
+
+if (guideName.includes(searchTerm) || guideDescription.includes(searchTerm)) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+
+// Search through animals
+animalItems.forEach(item => {
+const animalName = item.querySelector('h3').textContent.toLowerCase();
+const animalDescription = item.querySelector('p').textContent.toLowerCase();
+
+if (animalName.includes(searchTerm) || animalDescription.includes(searchTerm)) {
+item.style.display = 'flex';
+} else {
+item.style.display = 'none';
+}
+});
+});
+
+// Check if user is logged in
+const isLoggedIn = localStorage.getItem('safariLoggedIn') === 'true';
+// You could add special features for logged-in users here
+});
+</script>
+</body>
+</html>
